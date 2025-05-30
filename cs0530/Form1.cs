@@ -2,7 +2,7 @@ namespace cs0530
 {
     public partial class Form1 : Form
     {
-        int vx = -10, vy = -10;
+        int vx = -20, vy = -20;
         public Form1()
         {
             InitializeComponent();
@@ -13,9 +13,21 @@ namespace cs0530
             label1.Left += vx;
             label1.Top += vy;
             if (label1.Left < 0)
-                vx = -vx;
+            { 
+                vx = Math.Abs(vx);
+            }
+            else if(label1.Right>ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
             if (label1.Top < 0)
-                vy = -vy;
+            {
+                vy = Math.Abs(vy);
+            }
+            else if(label1.Bottom> ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
         }
     }
 }
