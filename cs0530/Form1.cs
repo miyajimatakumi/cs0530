@@ -14,6 +14,8 @@ namespace cs0530
             label1.Top += vy;
             if (label1.Left < 0)
                 vx = -vx;
+            if (label1.Top < 0)
+                vy = -vy;
         }
     }
 }
