@@ -12,6 +12,12 @@ namespace cs0530
         public Form1()
         {
             InitializeComponent();
+            for (int i=0; i < 4; i++)
+            {
+                vx[i] = random.Next(-10, 11);
+                vy[i] = random.Next(-10, 11);
+            }
+
             vx[1] = random.Next(-10, 11);
             vy[1] = random.Next(-10, 11);
 
@@ -27,7 +33,7 @@ namespace cs0530
 
             label5.Left = random.Next(0, ClientSize.Width - label5.Width);
             label5.Top = random.Next(0, ClientSize.Height - label5.Height);
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -135,6 +141,14 @@ namespace cs0530
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                MessageBox.Show($"{i}");
+            }
         }
     }
 }
